@@ -1,11 +1,10 @@
-@'
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import LoadingSpinner from '../components/LoadingSpinner';
 
 const API_URL = 'https://employee-backend-1pfm.onrender.com/api';
 
-function EmployeeList() {
+function ViewEmployees() {
   const [employees, setEmployees] = useState([]);
   const [filteredEmployees, setFilteredEmployees] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -135,5 +134,4 @@ function EmployeeList() {
   );
 }
 
-export default EmployeeList;
-'@ | Out-File -FilePath EmployeeList.js -Encoding utf8
+export default ViewEmployees;

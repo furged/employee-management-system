@@ -1,11 +1,10 @@
-@'
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const API_URL = 'https://employee-backend-1pfm.onrender.com/api';
 
-function EmployeeForm() {
+function AddEmployee() {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: '',
@@ -105,5 +104,4 @@ function EmployeeForm() {
   );
 }
 
-export default EmployeeForm;
-'@ | Out-File -FilePath EmployeeForm.js -Encoding utf8
+export default AddEmployee;

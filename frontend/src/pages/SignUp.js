@@ -1,11 +1,10 @@
-@'
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
 
 const API_URL = 'https://employee-backend-1pfm.onrender.com/api';
 
-function Register() {
+function SignUp() {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({ name: '', email: '', password: '' });
   const [error, setError] = useState('');
@@ -33,11 +32,11 @@ function Register() {
 
   return (
     <div className="form-container">
-      <h2 style={{textAlign: 'center', marginBottom: '20px'}}>Register</h2>
+      <h2 style={{textAlign: 'center', marginBottom: '20px'}}>Sign Up</h2>
       {error && <div className="alert alert-error">{error}</div>}
       <form onSubmit={handleSubmit}>
         <div className="form-group">
-          <label>Name</label>
+          <label>Full Name</label>
           <input type="text" name="name" value={formData.name} onChange={handleChange} required />
         </div>
         <div className="form-group">
@@ -48,12 +47,11 @@ function Register() {
           <label>Password</label>
           <input type="password" name="password" value={formData.password} onChange={handleChange} required minLength="6" />
         </div>
-        <button type="submit" className="btn" disabled={loading}>{loading ? 'Registering...' : 'Register'}</button>
+        <button type="submit" className="btn" disabled={loading}>{loading ? 'Signing up...' : 'Sign Up'}</button>
       </form>
-      <p style={{textAlign: 'center', marginTop: '15px'}}>Already have an account? <Link to="/login">Login</Link></p>
+      <p style={{textAlign: 'center', marginTop: '15px'}}>Already have an account? <Link to="/signin">Sign In</Link></p>
     </div>
   );
 }
 
-export default Register;
-'@ | Out-File -FilePath Register.js -Encoding utf8
+export default SignUp;

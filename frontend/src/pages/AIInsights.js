@@ -1,11 +1,10 @@
-@'
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import LoadingSpinner from '../components/LoadingSpinner';
 
 const API_URL = 'https://employee-backend-1pfm.onrender.com/api';
 
-function AIRecommendations() {
+function AIInsights() {
   const [employees, setEmployees] = useState([]);
   const [selectedEmployee, setSelectedEmployee] = useState('');
   const [recommendations, setRecommendations] = useState(null);
@@ -150,5 +149,4 @@ function AIRecommendations() {
   );
 }
 
-export default AIRecommendations;
-'@ | Out-File -FilePath AIRecommendations.js -Encoding utf8
+export default AIInsights;

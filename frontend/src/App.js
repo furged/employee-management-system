@@ -1,12 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import PrivateRoute from './components/PrivateRoute';
-import Login from './pages/Login';
-import Register from './pages/Register';
-import EmployeeForm from './pages/EmployeeForm';
-import EmployeeList from './pages/EmployeeList';
-import AIRecommendations from './pages/AIRecommendations';
+import SignIn from './pages/SignIn';
+import SignUp from './pages/SignUp';
+import AddEmployee from './pages/AddEmployee';
+import ViewEmployees from './pages/ViewEmployees';
+import AIInsights from './pages/AIInsights';
 import './App.css';
 
 function App() {
@@ -18,16 +17,16 @@ function App() {
         {token && <Navbar />}
         <div className="container">
           <Routes>
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
+            <Route path="/signin" element={<SignIn />} />
+            <Route path="/signup" element={<SignUp />} />
             <Route path="/" element={
-              token ? <EmployeeList /> : <Navigate to="/login" />
+              token ? <ViewEmployees /> : <Navigate to="/signin" />
             } />
             <Route path="/add-employee" element={
-              token ? <EmployeeForm /> : <Navigate to="/login" />
+              token ? <AddEmployee /> : <Navigate to="/signin" />
             } />
-            <Route path="/ai-recommendations" element={
-              token ? <AIRecommendations /> : <Navigate to="/login" />
+            <Route path="/ai-insights" element={
+              token ? <AIInsights /> : <Navigate to="/signin" />
             } />
           </Routes>
         </div>
