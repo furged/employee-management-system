@@ -1,3 +1,4 @@
+@'
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import LoadingSpinner from '../components/LoadingSpinner';
@@ -135,3 +136,4 @@ function EmployeeList() {
 }
 
 export default EmployeeList;
+'@ | Out-File -FilePath EmployeeList.js -Encoding utf8

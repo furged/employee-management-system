@@ -1,3 +1,4 @@
+@'
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
@@ -21,15 +22,9 @@ function Register() {
     
     try {
       const response = await axios.post(`${API_URL}/auth/register`, formData);
-      
-      if (response.data.token) {
-        localStorage.setItem('token', response.data.token);
-        localStorage.setItem('user', JSON.stringify(response.data));
-        window.location.href = '/';
-      } else {
-        setError('Registration failed');
-        setLoading(false);
-      }
+      localStorage.setItem('token', response.data.token);
+      localStorage.setItem('user', JSON.stringify(response.data));
+      window.location.href = '/';
     } catch (err) {
       setError(err.response?.data?.message || 'Registration failed');
       setLoading(false);
@@ -61,3 +56,4 @@ function Register() {
 }
 
 export default Register;
+'@ | Out-File -FilePath Register.js -Encoding utf8

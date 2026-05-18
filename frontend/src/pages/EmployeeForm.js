@@ -1,3 +1,4 @@
+@'
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
@@ -105,3 +106,4 @@ function EmployeeForm() {
 }
 
 export default EmployeeForm;
+'@ | Out-File -FilePath EmployeeForm.js -Encoding utf8
