@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import LoadingSpinner from '../components/LoadingSpinner';
 
-const API_URL = 'http://localhost:5000/api';
+const API_URL = 'https://employee-backend-1pfm.onrender.com/api';
 
 function EmployeeList() {
   const [employees, setEmployees] = useState([]);
